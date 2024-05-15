@@ -64,7 +64,14 @@ public class BookingServiceTest {
      */
     @Test
     void getAvailablePlaceCountTest() {
+        HashMap rooms = new HashMap<>();
+        new Room("1.1", 3);
+        new Room("1.2", 2);
+        new Room("1.3", 5);
+        RoomService user = Mockito.mock(RoomService.class);
+        Mockito.when(roomService.getAvailableRooms()).thenReturn((List<Room>) rooms);
 
+        assertThat(roomService.getAvailableRooms()).isEqualTo(10);
     }
 
     /**

@@ -23,6 +23,7 @@ public class ReservaMesaTest {
 
         reservaMesa.setMesas(mesas);
 
+        reservaMesa.imprimir();
 
         assertThat(reservaMesa.buscarPrimeraMesaVacia()).isEqualTo(0);
 

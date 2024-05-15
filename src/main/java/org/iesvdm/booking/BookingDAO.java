@@ -19,7 +19,7 @@ public class BookingDAO {
 	public BookingRequest get(String id) {
 		return bookings.get(id);
 	}
-	
+
 	public void delete(String bookingId) {
 		bookings.remove(bookingId);
 	}

@@ -26,7 +26,12 @@ public class BookingDAOTest {
      */
     @Test
     void  getAllBookingRequestsTest() {
+        BookingRequest request1 = new BookingRequest("1",null,null,1,true);
+        BookingRequest request2 = new BookingRequest("2",null,null,2,true);
+        bookingDAO.save(request1);
+        bookingDAO.save(request2);
 
+        System.out.println(bookingDAO.getAllBookingRequests().toString());
     }
 
     /**
@@ -37,7 +42,12 @@ public class BookingDAOTest {
      */
     @Test
     void getAllUUIDsTest() {
+        BookingRequest request1 = new BookingRequest("1",null,null,1,true);
+        BookingRequest request2 = new BookingRequest("2",null,null,2,true);
+        bookingDAO.save(request1);
+        bookingDAO.save(request2);
 
+        System.out.println(bookingDAO.getAllUUIDs().toString());
     }
 
 
@@ -49,6 +59,12 @@ public class BookingDAOTest {
      */
     @Test
     void getTest() {
+        BookingRequest request1 = new BookingRequest("1",null,null,1,true);
+        BookingRequest request2 = new BookingRequest("2",null,null,2,true);
+        bookingDAO.save(request1);
+        bookingDAO.save(request2);
+
+        System.out.println(bookingDAO.get(bookingDAO.save(request1)));
 
     }
 
@@ -60,7 +76,15 @@ public class BookingDAOTest {
      */
     @Test
     void deleteTest() {
+        BookingRequest request1 = new BookingRequest("1",null,null,1,true);
+        BookingRequest request2 = new BookingRequest("2",null,null,2,true);
+        bookingDAO.save(request1);
+        bookingDAO.save(request2);
 
+        bookingDAO.delete(bookingDAO.save(request1));
+
+        System.out.println(bookingDAO.totalBookings());
+        System.out.println(bookingDAO.getAllBookingRequests().toString());
     }
 
     /**
@@ -71,7 +95,13 @@ public class BookingDAOTest {
      */
     @Test
     void saveTwiceSameBookingRequestTest() {
+        BookingRequest request1 = new BookingRequest("1",null,null,1,true);
+        BookingRequest request2 = new BookingRequest("1",null,null,1,true);
+        bookingDAO.save(request1);
+        bookingDAO.save(request2);
 
+        System.out.println();
+        System.out.println(bookingDAO.getAllUUIDs().toString());
     }
 
 }
