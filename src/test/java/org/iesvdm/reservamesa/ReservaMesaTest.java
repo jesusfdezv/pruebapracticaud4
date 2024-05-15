@@ -111,5 +111,6 @@ public class ReservaMesaTest {
 
         assertThat(reservaMesa.comensalesTotales()).isEqualTo(1);
     }
+    //a
 }
 
